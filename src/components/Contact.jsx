@@ -14,7 +14,7 @@ const Contact = () => {
                     <p className="text-foreground text-lg font-inter text-center">Get support or inquire to us at Qwale.</p>
                     <p className="text-foreground text-lg text-center mb-4 sm:mb-8">Contact us today @ contact@qwale.ca</p>
                     <div className="flex justify-center">
-                        <Button variant="outline" onClick={() => window.open("mailto:someone@yoursite.com")}>Email us</Button>
+                        <Button variant="outline" onClick={() => window.open("mailto:contact@qwale.ca")}>Email us</Button>
                     </div>
                 </div>
             </div>
