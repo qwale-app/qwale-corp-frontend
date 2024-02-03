@@ -70,6 +70,13 @@ const FileUpload = (props) => {
 
     const fileUploaded = async() => {
         const formData = new FormData();
+        if(file.size > 8e6) {
+            toast({
+                title: "An error occurred",
+                description: "Make sure the file uploaded is less than 8 MB.",
+            })
+            return
+        }
         formData.append("image", file);
 
         teamService.setImg(props.username, formData)

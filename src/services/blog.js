@@ -1,6 +1,6 @@
 import teamService from './team'
 import axios from 'axios'
-const baseUrl = '/api/corporate/blog'
+const baseUrl = 'http://localhost:3001/api/corporate/blog'
 
 const getMetaPosts = async(pageNum) => {
     const response = await axios.get(`${baseUrl}/page/${pageNum || 1}`, { pageNum })

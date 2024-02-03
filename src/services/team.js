@@ -1,6 +1,6 @@
 import axios from 'axios'
-const baseUrl = '/api/corporate/team'
-const imgBaseUrl = '/api/corporate/img'
+const baseUrl = 'http://localhost:3001/api/corporate/team'
+const imgBaseUrl = 'http://localhost:3001/api/corporate/img'
 
 let token = null
 const setToken = newToken => {
