@@ -88,7 +88,7 @@ const Navbar = (props) => {
             </div>
             <Outlet/>
             <Toaster />
-            <div className="py-2 px-4 w-full flex content-center bg-opacity-5 bg-primary-foreground">
+            <div className="py-2 px-4 h-[2.5rem] w-full flex content-center bg-opacity-5 bg-primary-foreground z-40">
                 <p className="ml-0 mr-auto text-sm">Copyright 2024 Qwale</p>
                 <div className="ml-auto mr-0 flex">
                     <p className="text-sm inline-block mr-2 my-auto text-center justify-center">Light Mode</p>
@@ -104,7 +104,7 @@ const DropdownMenuItem = ({ itemText }) => {
         <NavigationMenuItem>
             <NavigationMenuTrigger>{itemText}</NavigationMenuTrigger>
             <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {NAVIGATION_DATA
                         .filter((component) => component.group && component.group.toLowerCase() == itemText.toLowerCase() && !component.hide)
                         .map((component, i) => (
@@ -142,7 +142,7 @@ const ListItem = React.forwardRef(({ className, title, href, children, ...props 
                     ref={ref}
                     to={href || null}
                     className={cn(
-                        "block select-none max-w-[calc(100%-2rem)] md:max-w-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        "block select-none h-full max-w-[calc(100%-2.2rem)] md:max-w-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                         className
                     )}
                     {...props}
