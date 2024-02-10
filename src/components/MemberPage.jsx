@@ -136,7 +136,7 @@ const TeamCard = ({card}) => {
     case 0:
         searchedPositions = [...allPositions].sort((a, b) => b.end - a.end)
         searchedPositions = searchedPositions.filter(p => ((p.end.getMonth() === searchedPositions[0].end.getMonth()) && (p.end.getFullYear() === searchedPositions[0].end.getFullYear())))
-        if(searchedPositions.length) mainPosition = `Ex-${(searchedPositions.find(p => !p.board).position || searchedPositions[0]).position}`
+        mainPosition = searchedPositions.length>0 ? `Ex-${(searchedPositions.find(p => !p.board) || searchedPositions[0]).position}` : 'No position'
         break
     case 1:
         mainPosition = searchedPositions[0].position
@@ -171,8 +171,8 @@ const TeamCard = ({card}) => {
                 </div>
             </CardHeader>
             <CardContent>
-                {(loggedUser && (loggedUser.username == username || loggedUser.admin)) ? <UpdateDescr username={username} defaultDescription={description} /> : <p className="pb-6">{(description.split(/\n/).map(line => <Fragment key={line}>{line}<br /></Fragment>) || "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")}</p>}
-                <h3 className="text-2xl font-inter mt-6" >Positions</h3>
+                {(loggedUser && (loggedUser.username == username || loggedUser.admin)) ? <UpdateDescr username={username} defaultDescription={description} /> : <p className="pb-6">{description ? description.split(/\n/).map(line => <Fragment key={line}>{line}<br /></Fragment>) : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</p>}
+                {allPositions.length>0 && <h3 className="text-2xl font-inter mt-6" >Positions</h3>}
                 {allPositions.map((p, i) => <Experience key={i} index={i} position={p} admin={loggedUser && loggedUser.admin} owner={username} />)}
                 <div className={(allowedBlogs.length <= 0 || (loggedUser && (loggedUser.username == username || loggedUser.admin))) ? "hidden" : null}>
                     <h3 className="text-2xl font-inter mt-6" >Blog Posts</h3>
