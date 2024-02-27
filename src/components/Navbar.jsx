@@ -89,7 +89,7 @@ const Navbar = (props) => {
             <Outlet/>
             <Toaster />
             <div className="py-2 px-4 h-[2.5rem] w-full flex content-center bg-opacity-5 bg-primary-foreground z-40">
-                <p className="ml-0 mr-auto text-sm">Copyright 2024 Qwale</p>
+                <p className="ml-0 mr-auto text-sm">© 2024 Qwale, Inc.</p>
                 <div className="ml-auto mr-0 flex">
                     <p className="text-sm inline-block mr-2 my-auto text-center justify-center">Light Mode</p>
                     <Switch checked={lightMode} onCheckedChange={switchMode} />

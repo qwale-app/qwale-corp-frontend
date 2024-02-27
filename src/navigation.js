@@ -28,7 +28,7 @@ const NAVIGATION_DATA = [
         title: "About",
         href: "/about",
         description:
-        "About Qwale Inc.",
+        "About Qwale, Inc.",
         group: "Corporate"
     },
     {
