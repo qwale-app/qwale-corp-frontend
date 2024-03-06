@@ -5,7 +5,6 @@ import Navbar from './components/Navbar.jsx'
 import Homepage from './components/Homepage.jsx'
 import Contact from './components/Contact.jsx'
 import Error from './components/Error.jsx'
-import About from './components/About.jsx'
 import Team from './components/Team.jsx'
 import MemberPage from './components/MemberPage.jsx'
 import LoginForm from './components/LoginForm.jsx'
@@ -54,10 +53,6 @@ const router = createBrowserRouter([
             {
                 path: "contact",
                 element: <Contact />
-            },
-            {
-                path: "about",
-                element: <About />
             },
             {
                 path: "team",

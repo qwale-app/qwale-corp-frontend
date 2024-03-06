@@ -13,7 +13,7 @@ const Homepage = () => {
         <>
             <div className="pt-[calc((10vh-3rem)*4)] pb-[calc((10vh-4rem)*4+3rem)]">
                 <div className="flex flex-col pb-64 pt-[calc((10vh+1.5rem)*2)] md:pt-[calc((10vh+1rem)*2)]">
-                    <h2 className="text-foreground text-3xl sm:text-6xl font-inter text-center mb-12 sm:mt-12 mx-4">Revolutionizing <span className="bg-gradient-to-r from-[#be45ff] via-[#5930ff] to-[#45ffbb] inline text-transparent bg-clip-text">software development</span>.</h2>
+                    <h2 className="text-foreground text-3xl sm:text-6xl font-inter text-center mb-12 sm:mt-12 mx-4">Revolutionizing <span className="underline decoration-indigo-600 dark:decoration-blue-700"><span className="bg-gradient-to-tl from-indigo-400 to-purple-200 dark:from-blue-700 dark:to-purple-500 inline text-transparent bg-clip-text">software development</span></span>.</h2>
                     <div className="flex justify-center">
                         <Button variant="outline" onClick={() => viewProj.current.scrollIntoView({behavior: 'smooth', block: 'start'})}>Our Work</Button>
                     </div>

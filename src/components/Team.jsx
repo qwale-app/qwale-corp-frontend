@@ -33,12 +33,12 @@ const Team = () => {
 
     const allMembers = useSelector(({ team }) => team)
     const teamMembers = [...allMembers].filter(m => (m.positions && m.positions.some(p => !p.end)) || (m.board && m.board.some(p => !p.end)))
-    const normMembers = teamMembers.filter(m => m.positions && !m.positions.some(p => p.executive && !p.end))
+    const normMembers = teamMembers.filter(m => m.positions && m.positions.length > 0 && !m.positions.some(p => p.executive && !p.end))
 
 
     const loggedUser = useSelector(({ login }) => login)
 
-    const unassignedMembers = (loggedUser && loggedUser.admin) ? allMembers.filter(m => ((!m.positions) || !m.positions.some(p => !p.end)) && ((!m.board) || !m.board.some(p => !p.end))) : []
+    const unassignedMembers = (loggedUser && loggedUser.admin) ? allMembers.filter(m => ((!m.positions) || (!(m.positions.length>0)) || !m.positions.some(p => !p.end)) && ((!m.board) || !m.board.some(p => !p.end))) : []
 
     const navigate = useNavigate()
 

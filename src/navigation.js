@@ -25,18 +25,11 @@ const NAVIGATION_DATA = [
         econ: "🔎"
     },
     {
-        title: "About",
-        href: "/about",
-        description:
-        "About Qwale, Inc.",
-        group: "Corporate"
-    },
-    {
         title: "Partners",
         href: "/partners",
         description:
         "Learn about our corporate partners.",
-        group: "Corporate",
+        group: "About",
         hide: true
     },
     {
@@ -44,14 +37,21 @@ const NAVIGATION_DATA = [
         href: "/team",
         description:
         "Meet our team and executive leadership.",
-        group: "Corporate"
+        group: "About"
+    },
+    {
+        title: "Contact",
+        href: "/contact",
+        description:
+        "Get in touch with us.",
+        group: "About"
     },
     {
         title: "Blog",
         href: "/blog",
         description:
         "Read blog posts from our team.",
-        group: "Corporate"
+        group: "About"
     },
 ]
 
