@@ -55,7 +55,7 @@ const BlogList = () => {
                     <Button className="mx-1" onClick={() => navigate(`/team`)}>Home</Button>
                 </div>
                 
-                {blogs.filter(b => !b.approved).map(b => <BlogDetails key={b.id} blog={b} /> )}
+                {(blogs && blogs.length) ? blogs.filter(b => !b.approved).map(b => <BlogDetails key={b.id} blog={b} /> ) : null}
             </div>
         </>
     )
