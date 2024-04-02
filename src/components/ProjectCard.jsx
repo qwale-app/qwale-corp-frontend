@@ -5,7 +5,8 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { Link } from "react-router-dom"
 
 const ProjectCard = ({card}) => {
     const {title, description, econ, href} = card
@@ -21,7 +22,7 @@ const ProjectCard = ({card}) => {
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
             <CardContent>
-                {href && <Button variant="outline" className="mt-4" onClick={() => window.location.href = href}>{title}</Button>}
+                {href && <Link className={buttonVariants({variant: "outline"}) + " mt-4"} to={href}>{title}</Link>}
             </CardContent>
         </Card>
     )

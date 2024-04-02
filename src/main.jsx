@@ -34,7 +34,7 @@ const store = configureStore({
 
 const Version = () => {
     const date = new Date
-    const versionId = "1.0.0"
+    const versionId = "1.1.0"
     return (
         <p className="text-white text-xl" >Version number {versionId}<br/>{date.toUTCString()}<br/>(c) Faraaz Jan</p>
     )

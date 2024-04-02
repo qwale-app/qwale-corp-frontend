@@ -17,9 +17,12 @@ const getOwnedPosts = async() => {
         headers: { Authorization: teamService.getToken() },
     }
 
-    axios.get(`${baseUrl}/drafts`, config)
-        .then(response => response.data)
-        .catch(() => ([]))
+    try {
+        const drafts = await axios.get(`${baseUrl}/drafts`, config)
+        return drafts.data
+    } catch {
+        return ([])
+    }
 }
 
 const getSpecificPost = async(id, curtok) => {

@@ -9,6 +9,15 @@ const NAVIGATION_DATA = [
         hide: true
     },
     {
+        title: "Kogitsio",
+        href: "https://kogits.io",
+        description:
+        "Your AI search assistant.",
+        group: "Projects",
+        econ: "🔎",
+        hide: false
+    },
+    {
         title: "QAuthify",
         href: "https://github.com/qwale-app/QAuthify",
         description:
@@ -22,7 +31,7 @@ const NAVIGATION_DATA = [
         description:
         "cool things in the works...",
         group: "Projects",
-        econ: "🔎"
+        econ: "⏰"
     },
     {
         title: "Partners",
