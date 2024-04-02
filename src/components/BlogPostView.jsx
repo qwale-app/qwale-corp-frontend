@@ -67,7 +67,7 @@ const BlogPostView = () => {
                             <CardDescription className="mt-2">{(publishDate && `Published ${publishDate.toLocaleDateString()}`) || "Unpublished"}</CardDescription>
                             <CardDescription className={updateDate && ((publishDate && updateDate > publishDate) || (blog && !blog.approved)) || "hidden"}>{(updateDate && `Last Edited ${updateDate.toLocaleDateString()}`) || "Unknown"}</CardDescription>
                             <Separator className="my-4" />
-                            <ReactMarkdown className={proseStyles.join(' ')} >
+                            <ReactMarkdown className={proseStyles.join(' ')} components={{img:({node,...props})=><img style={{maxWidth:'100%', maxHeight: '30rem'}} className="rounded-xl mx-auto my-8" {...props}/>}} >
                                 { (blog && blog.content) || ""}
                             </ReactMarkdown>
                         </CardContent>
