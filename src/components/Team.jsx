@@ -54,10 +54,10 @@ const Team = () => {
     }
 
     return(
-        <div className="min-h-[calc(100vh-2.5rem)]">
-            <div className="h-full pt-20 xl:pb-24 md:pb-14 sm:pb-10 pb-24">
-                <div className="flex flex-col pt-48 md:pt-64 sm:pt-52">
-                    <h2 className="text-foreground text-4xl sm:text-6xl font-inter text-center mb-4 sm:mt-12 mx-4">Meet our team</h2>
+        <>
+            <div className="my-auto">
+                <div className="flex flex-col mt-20">
+                    <h2 className="text-foreground text-4xl sm:text-6xl font-outfit font-semibold text-center mb-4 sm:mt-12 mx-4">Meet our team</h2>
                 </div>
             </div>
 
@@ -67,33 +67,33 @@ const Team = () => {
                 <Button className="mx-1" onClick={() => navigate(`/team/${loggedUser.username}`)}>My Profile</Button>
                 <Button className="mx-1" onClick={() => navigate(`/blog/drafts`)}>My Blogs</Button>
             </div>
-            
-            {
-                teamMembers.filter(m => m.board && m.board.some(p => !p.end)).length>0 ?
-                    <>
-                        <h2 className="text-foreground text-4xl font-inter text-center mb-6 mt-10">Board of Directors</h2>
-                        <TeamList cards={teamMembers.filter(m => m.board && m.board.some(p => !p.end))} isBoard={true} />
-                    </> : null
-            }
 
             {
                 teamMembers.filter(m => m.positions && m.positions.some(p => p.executive && !p.end)).length>0 ?
                     <>
-                        <h2 className="text-foreground text-4xl font-inter text-center mb-6 mt-10">Executive Leadership</h2>
+                        <h2 className="text-foreground text-2xl sm:text-4xl font-outfit font-semibold text-center mb-4">Executive Leadership</h2>
                         <TeamList cards={teamMembers.filter(m => m.positions && m.positions.some(p => p.executive && !p.end))} />
                     </> : null
             }
             
             {
-                normMembers.length > 0 ? <><h2 className="text-foreground text-4xl font-inter text-center mb-6 mt-10">Team Members</h2>
+                teamMembers.filter(m => m.board && m.board.some(p => !p.end)).length>0 ?
+                    <>
+                        <h2 className="text-foreground text-2xl sm:text-4xl font-outfit font-semibold text-center mb-4 mt-10">Board Governance</h2>
+                        <TeamList cards={teamMembers.filter(m => m.board && m.board.some(p => !p.end))} isBoard={true} />
+                    </> : null
+            }
+            
+            {
+                normMembers.length > 0 ? <><h2 className="text-foreground text-2xl sm:text-4xl font-outfit font-semibold text-center mb-4 mt-10">The Team</h2>
                     <TeamList cards={normMembers} /></> : null
             }
 
             {
-                (loggedUser && loggedUser.admin && unassignedMembers.length > 0) ? <><h2 className="text-foreground text-4xl font-inter text-center mb-6 mt-10">Past Team Members</h2>
+                (loggedUser && loggedUser.admin && unassignedMembers.length > 0) ? <><h2 className="text-foreground text-2xl sm:text-4xl font-outfit font-semibold text-center mb-4 mt-10">Inactive Members</h2>
                     <TeamList cards={unassignedMembers} /></> : null
             }
-        </div>
+        </>
     )
 }
 

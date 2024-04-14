@@ -128,25 +128,23 @@ const BlogPostEdit = () => {
     if(!(loggedUser && (loggedUser.username === blog.user.username || loggedUser.admin) && currentMember)) return <Error />
 
     return(
-        <>
-            <div className="h-full pt-20 min-h-[calc(100vh-2.5rem)]">
-                <div className="flex flex-col pt-24 md:pt-64 sm:pt-52">
-                    <div className="flex flex-row justify-center">
-                        <Button className="mx-1" onClick={() => navigate(`/blog/${blog.id}`)}>View Blog</Button>
-                        <Button className="mx-1" onClick={saveBlog}>Save Blog</Button>
-                        {(loggedUser && loggedUser.admin) && (blog.approved ? <AlertButton className="mx-1" action={unpublishBlog} confirm="Unpublish Blog" description="Are you sure you want to unpublish the blog? You will have to republish it for it to be publicly viewable.">Unpublish Blog</AlertButton> : <Button className="mx-1" onClick={publishBlog}>Publish Blog</Button>)}
-                        {loggedUser && (loggedUser.admin || (!blog.approved)) && <AlertButton className="mx-1" action={deleteBlog} confirm="Delete Blog" description="This action cannot be undone. This will permanently delete your blog post from servers.">Delete Blog</AlertButton>}
-                    </div>
-                    <Card className="m-4 sm:px-10 py-8 sm:py-16">
-                        <CardContent>
-                            <Input className="md:text-6xl sm:text-5xl text-4xl font-inter h-auto mb-2" placeholder="Blog post title" onChange={handleTitleChange} value={blogTitle} />
-                            <Textarea className="min-h-[800px] w-full" placeholder="Type markdown here" onChange={handleTextareaChange} value={markdown} >{blog && blog.content}</Textarea>
-                        </CardContent>
-                    </Card>
-                
+        <div className="h-full pt-20 min-h-[calc(100vh-2.5rem)] my-auto">
+            <div className="flex flex-col pt-24 md:pt-64 sm:pt-52">
+                <div className="flex flex-row justify-center">
+                    <Button className="mx-1" onClick={() => navigate(`/blog/${blog.id}`)}>View Blog</Button>
+                    <Button className="mx-1" onClick={saveBlog}>Save Blog</Button>
+                    {(loggedUser && loggedUser.admin) && (blog.approved ? <AlertButton className="mx-1" action={unpublishBlog} confirm="Unpublish Blog" description="Are you sure you want to unpublish the blog? You will have to republish it for it to be publicly viewable.">Unpublish Blog</AlertButton> : <Button className="mx-1" onClick={publishBlog}>Publish Blog</Button>)}
+                    {loggedUser && (loggedUser.admin || (!blog.approved)) && <AlertButton className="mx-1" action={deleteBlog} confirm="Delete Blog" description="This action cannot be undone. This will permanently delete your blog post from servers.">Delete Blog</AlertButton>}
                 </div>
+                <Card className="m-4 sm:px-10 py-8 sm:py-16">
+                    <CardContent>
+                        <Input className="md:text-6xl sm:text-5xl text-4xl font-inter h-auto mb-2" placeholder="Blog post title" onChange={handleTitleChange} value={blogTitle} />
+                        <Textarea className="min-h-[800px] w-full" placeholder="Type markdown here" onChange={handleTextareaChange} value={markdown} >{blog && blog.content}</Textarea>
+                    </CardContent>
+                </Card>
+            
             </div>
-        </>
+        </div>
     )
 }
 

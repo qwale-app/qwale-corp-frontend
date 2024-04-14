@@ -53,7 +53,7 @@ const MemberPage = () => {
 
     return(
         <>
-            <div className="h-full pt-32 md:pt-48 lg:pt-64 px-2 lg:px-20 xl:px-64 min-h-[calc(100vh-2.5rem)]">
+            <div className="h-full pt-20 px-2 lg:px-20 xl:px-64 my-auto">
                 <TeamCard card={currentMember} />
             </div>
         </>
@@ -156,7 +156,7 @@ const TeamCard = ({card}) => {
                 </FileUpload>
                 <div className="flex sm:flex-row flex-col w-full">
                     <div className="pl-4 flex flex-col justify-center">
-                        <CardTitle>
+                        <CardTitle className="font-outfit">
                             {(loggedUser && (loggedUser.username == username || loggedUser.admin)) ? <UpdateName defaultName={name} username={username}/> : `${name}`}
                         </CardTitle>
                         <CardDescription>{mainPosition}</CardDescription>
@@ -172,10 +172,10 @@ const TeamCard = ({card}) => {
             </CardHeader>
             <CardContent>
                 {(loggedUser && (loggedUser.username == username || loggedUser.admin)) ? <UpdateDescr username={username} defaultDescription={description} /> : <p className="pb-6">{description ? description.split(/\n/).map(line => <Fragment key={line}>{line}<br /></Fragment>) : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</p>}
-                {allPositions.length>0 && <h3 className="text-2xl font-inter mt-6" >Positions</h3>}
+                {allPositions.length>0 && <h3 className="text-2xl mt-6 font-outfit font-semibold" >Positions</h3>}
                 {allPositions.map((p, i) => <Experience key={i} index={i} position={p} admin={loggedUser && loggedUser.admin} owner={username} />)}
                 <div className={(allowedBlogs.length <= 0 || (loggedUser && (loggedUser.username == username || loggedUser.admin))) ? "hidden" : null}>
-                    <h3 className="text-2xl font-inter mt-6" >Blog Posts</h3>
+                    <h3 className="text-2xl font-outfit mt-6 font-semibold" >Blog Posts</h3>
                     {allowedBlogs.map((b, i) => <BlogItem key={i} index={i} blog={b} />)}
                 </div>
                 
@@ -209,11 +209,11 @@ const Experience = ({index, position, admin, owner}) => {
             {index==0 ? null : <Separator className="my-2" />}
             <div className="py-2">
                 <div className="flex flex-col sm:flex-row">
-                    <h3 className="text-lg">{position.position || "unknown position"}</h3>
-                    <div className="flex justify-start pt-1 sm:pt-0">
-                        {!position.end ? <Badge className="mr-2 sm:ml-4 sm:mr-0" variant="secondary">Current</Badge> : null}
-                        {position.executive ? <Badge className="mr-2 sm:ml-4 sm:mr-0" variant="outline">Executive Leadership</Badge> : null}
-                        {position.board ? <Badge className="mr-2 sm:ml-4 sm:mr-0" variant="outline">Board of Directors</Badge> : null}
+                    <h3 className="text-lg font-outfit my-auto">{position.position || "unknown position"}</h3>
+                    <div className="flex justify-start pt-1 sm:pt-0 gap-1 sm:pl-2 pl-0">
+                        {!position.end ? <Badge variant="default">Current</Badge> : null}
+                        {position.executive ? <Badge variant="outline">Executive Leadership</Badge> : null}
+                        {position.board ? <Badge variant="outline">Board of Directors</Badge> : null}
                     </div>
                 </div>
                 <p className="text-sm text-muted-foreground">{(position.start && dateString(position.start)) || "Unknown"} - {(position.end && dateString(position.end)) || "Present"}</p>
@@ -231,7 +231,7 @@ const BlogItem = ({index, blog}) => {
             <div className="py-2 hover:underline">
                 <Link to={`/blog/${blog.id}`}>
                     <div className="flex flex-col sm:flex-row">
-                        <h3 className="text-lg">{blog.title || "untitled blog post"}</h3>
+                        <h3 className="text-lg font-outfit">{blog.title || "untitled blog post"}</h3>
                     </div>
                     <p className="text-sm text-muted-foreground">{(blog.publishDate && dateString(new Date(blog.publishDate))) || "Unknown"}</p>
                 </Link>

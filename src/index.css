@@ -3,9 +3,30 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-      -webkit-tap-highlight-color: transparent;
-    }
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    scrollbar-gutter: auto;
+  }
+  
+  /* custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 6px;
+    border: 0px solid transparent;
+    background-clip: content-box;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: #3d3d3d;
+  }
 }
 
 @layer base {
@@ -80,7 +101,7 @@
     --qurple: 259 100% 50%;
     --qhigh: 0 0% 100%;
 
-    --homebg: url("/src/assets/homebg_dark.png");
+    /* --homebg: url("/src/assets/homebg_dark.png"); */
   }
 }
  

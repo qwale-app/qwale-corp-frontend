@@ -13,7 +13,7 @@ const BlogDetails = ({ blog }) => {
         <Card className="mx-4 xl:mx-64 lg:mx-32 md:mx-16 sm:mx-8 mb-8">
             <CardHeader>
                 <Link to={`/blog/${blog.id}`} >
-                    <CardTitle>{blog.title || "untitled blog post"}<span className="text-muted-foreground" >{(!blog.approved) && " (draft)"}</span></CardTitle>
+                    <CardTitle className="font-outfit">{blog.title || "untitled blog post"}<span className="text-muted-foreground" >{(!blog.approved) && " (draft)"}</span></CardTitle>
                 </Link>
                 <CardDescription>
                     {(blog.publishDate && `Published ${new Date(blog.publishDate).toLocaleDateString()}`) || "unpublished"}

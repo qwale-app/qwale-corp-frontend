@@ -79,7 +79,8 @@ module.exports = {
             },
             fontFamily: {
                 'metrovancouver': ['"metrovancouver"'],
-                'inter': ['"Inter"']
+                'inter': ['"Inter"'],
+                'outfit': ['"Outfit"']
             },
         },
     },

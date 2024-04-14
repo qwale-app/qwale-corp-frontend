@@ -115,21 +115,19 @@ const LoginFormList = () => {
 
 const LoginForm = () => {
     return(
-        <>
-            <div className="h-full pt-20 min-h-[calc(100vh-2.5rem)]">
-                <div className="flex flex-col pt-48 md:pt-64 sm:pt-52">
-                    <h2 className="text-foreground text-4xl sm:text-6xl font-inter text-center mb-4 sm:mt-12 mx-4">Login to Qwale Corporate</h2>
-                    <Card className="mx-4 mb-8">
-                        <CardHeader>
-                            <CardTitle>Login</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <LoginFormList />
-                        </CardContent>
-                    </Card>
-                </div>
+        <div className="my-auto">
+            <div className="flex flex-col">
+                <h2 className="text-foreground text-4xl sm:text-6xl font-outfit font-semibold text-center mb-4 mx-4">Login to Qwale Corporate</h2>
+                <Card className="mx-4 mb-8">
+                    <CardHeader>
+                        <CardTitle className="font-outfit">Login</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <LoginFormList />
+                    </CardContent>
+                </Card>
             </div>
-        </>
+        </div>
     )
 }
 

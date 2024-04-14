@@ -82,7 +82,7 @@ const BlogList = () => {
     const page = Number(query.get("page")) || 1
 
     useEffect(() => {
-        document.title = "Qwale Corporate | Blog"
+        document.title = "Qwale | Blog"
     }, [])
 
     useEffect(() => {
@@ -105,16 +105,14 @@ const BlogList = () => {
     if(!myblogs) return <Error />
 
     return(
-        <>
-            <div className="h-full pt-20 xl:pb-24 min-h-[calc(100vh-2.5rem)]">
-                <div className="flex flex-col pt-48 md:pt-64 sm:pt-52 md:pb-14 sm:pb-10 pb-24">
-                    <h2 className="text-foreground text-4xl sm:text-6xl font-inter text-center mb-4 sm:mt-12 mx-4">Qwale Blog</h2>
-                </div>
-                
-                {myblogs && myblogs.map(b => <BlogDetails key={b.id} blog={b} /> )}
-                <PageBar page={page} max={resultcount.pages} />
+        <div className="my-auto">
+            <div className="flex flex-col mt-20">
+                <h2 className="text-foreground text-4xl sm:text-6xl font-outfit font-semibold text-center mb-4 sm:mt-12 mx-4">Qwale Blog</h2>
             </div>
-        </>
+            
+            {myblogs && myblogs.map(b => <BlogDetails key={b.id} blog={b} /> )}
+            <PageBar page={page} max={resultcount.pages} />
+        </div>
     )
 }
 

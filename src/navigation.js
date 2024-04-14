@@ -15,6 +15,7 @@ const NAVIGATION_DATA = [
         "Your AI search assistant.",
         group: "Projects",
         econ: "🔎",
+        img: "/src/assets/projects/kogitsio.png",
         hide: false
     },
     {
@@ -45,7 +46,7 @@ const NAVIGATION_DATA = [
         title: "Team",
         href: "/team",
         description:
-        "Meet our team and executive leadership.",
+        "Meet our team.",
         group: "About"
     },
     {

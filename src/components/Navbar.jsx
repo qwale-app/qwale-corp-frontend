@@ -28,7 +28,7 @@ import { QwaleIcon } from "./Icons"
 
 const Navbar = (props) => {
     const dispatch = useDispatch()
-    const [lightMode, setLightMode] = React.useState(false)
+    const [lightMode, setLightMode] = React.useState(true)
 
     const switchMode = (state) => {
         setLightMode(state)
@@ -68,42 +68,45 @@ const Navbar = (props) => {
 
     return (
         <>
-            <div className="flex py-2 shadow-lg fixed w-full bg-background transition-colors z-40">
-                <div className="h-auto ml-5 md:ml-20 my-auto w-8 sm:w-36">
-                    <Link className="flex content-center" to="/">
-                        <QwaleIcon className="h-7 fill-qhigh" />
+            <div className="flex py-2 shadow-lg px-2 fixed w-full bg-background transition-colors z-40 gap-2 sm:gap-4">
+                <div className="h-auto ml-3 md:ml-20 my-auto mr-0 select-none">
+                    <Link className="flex content-center gap-2" to="/">
+                        <QwaleIcon className="h-7 fill-qhigh my-auto" />
+                        <h1 className="text-2xl font-semibold my-auto font-outfit">Qwale</h1>
                     </Link>
                 </div>
-                <div className="ml-auto mr-5 md:mr-20">
+                <div className="ml-auto sm:mr-auto sm:ml-0 select-none">
                     <NavigationMenu>
                         <NavigationMenuList>
-                            <DropdownMenuItem itemText="Projects"/>
-                            <DropdownMenuItem itemText="About"/>
+                            <DropdownMenuItem itemText="Solutions" filter="projects"/>
+                            <DropdownMenuItem itemText="About" filter="about"/>
                         </NavigationMenuList>
                     </NavigationMenu>
                 </div>
             </div>
-            <Outlet/>
-            <Toaster />
-            <div className="py-2 px-4 h-[2.5rem] w-full flex content-center bg-opacity-5 bg-black z-40">
-                <p className="ml-0 mr-auto text-sm">© 2024 Qwale, Inc.</p>
-                <div className="ml-auto mr-0 flex">
-                    <p className="text-sm inline-block mr-2 my-auto text-center justify-center">Light Mode</p>
-                    <Switch checked={lightMode} onCheckedChange={switchMode} />
+            <div className="min-h-[100dvh] flex flex-col">
+                <Outlet/>
+                <Toaster />
+                <div className="py-2 px-4 h-[2.5rem] w-full flex content-center mb-0 mt-0 border-t border-border z-40 select-none">
+                    <p className="ml-0 mr-auto text-sm">© 2024 Qwale, Inc.</p>
+                    <div className="ml-auto mr-0 flex">
+                        <p className="text-sm inline-block mr-2 my-auto text-center justify-center">Light Mode</p>
+                        <Switch checked={lightMode} onCheckedChange={switchMode} />
+                    </div>
                 </div>
             </div>
         </>
     )
 }
   
-const DropdownMenuItem = ({ itemText }) => {
+const DropdownMenuItem = ({ itemText, filter }) => {
     return (
         <NavigationMenuItem>
             <NavigationMenuTrigger>{itemText}</NavigationMenuTrigger>
             <NavigationMenuContent>
-                <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {NAVIGATION_DATA
-                        .filter((component) => component.group && component.group.toLowerCase() == itemText.toLowerCase() && !component.hide)
+                        .filter((component) => component.group && component.group.toLowerCase() == filter.toLowerCase() && !component.hide)
                         .map((component, i) => (
                             <ListItem
                                 key={`${i}${itemText}${component.title}`}
@@ -139,13 +142,13 @@ const ListItem = React.forwardRef(({ className, title, href, children, ...props 
                     ref={ref}
                     to={href || null}
                     className={cn(
-                        "block select-none h-full max-w-[calc(100%-2.2rem)] md:max-w-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        "block select-none h-full w-full md:max-w-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                         className
                     )}
                     {...props}
                 >
                     <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                    <p className="line-clamp-1 text-sm leading-snug text-muted-foreground">
                         {children}
                     </p>
                 </Link>

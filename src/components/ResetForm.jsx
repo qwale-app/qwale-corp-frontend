@@ -46,12 +46,12 @@ const ResetForm = () => {
 
     return(
         <>
-            <div className="h-full pt-20 min-h-[calc(100vh-2.5rem)]">
-                <div className="flex flex-col pt-48 md:pt-64 sm:pt-52">
-                    <h2 className="text-foreground text-4xl sm:text-6xl font-inter text-center mb-4 sm:mt-12 mx-4">Reset your Qwale Corporate login</h2>
+            <div className="my-auto">
+                <div className="flex flex-col">
+                    <h2 className="text-foreground text-4xl sm:text-6xl font-outfit font-semibold text-center mb-4 mx-4">Reset your Qwale Corporate login</h2>
                     <Card className="mx-4 mb-8">
                         <CardHeader>
-                            <CardTitle>Reset Password</CardTitle>
+                            <CardTitle className="font-outfit">Reset Password</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <Label>Username</Label>
@@ -75,7 +75,7 @@ const ResetPassPrompt = ({token, user}) => {
     const { toast } = useToast()
 
     useEffect(() => {
-        document.title = "Qwale Corporate | Reset Password"
+        document.title = "Qwale | Reset Password"
     }, [])
 
     useEffect(() => {
@@ -106,25 +106,23 @@ const ResetPassPrompt = ({token, user}) => {
     }
 
     return(
-        <>
-            <div className="h-full pt-20 min-h-[calc(100vh-2.5rem)]">
-                <div className="flex flex-col pt-48 md:pt-64 sm:pt-52">
-                    <h2 className="text-foreground text-4xl sm:text-6xl font-inter text-center mb-4 sm:mt-12 mx-4">Reset your Qwale Corporate login</h2>
-                    <Card className="mx-4 mb-8">
-                        <CardHeader>
-                            <CardTitle>Reset Password</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <Label>New Password</Label>
-                            <Input className="mt-2 mb-8" type="password" placeholder="new password" name="np" value={np} onChange={(e) => setNp(e.target.value)} />
-                            <Label>Repeat Password</Label>
-                            <Input className="mt-2" type="password" placeholder="new password" name="npr" value={npr} onChange={(e) => setNpr(e.target.value)} />
-                            <div className="flex flex-row mt-8" ><Button onClick={resetAction}>Reset</Button><Button className="ml-2" variant="secondary" onClick={(e) => {e.preventDefault(); navigate("/team/login")}}>Login</Button></div>
-                        </CardContent>
-                    </Card>
-                </div>
+        <div className="my-auto">
+            <div className="flex flex-col">
+                <h2 className="text-foreground text-4xl sm:text-6xl font-outfit font-semibold text-center mb-4 mx-4">Reset your Qwale Corporate login</h2>
+                <Card className="mx-4 mb-8">
+                    <CardHeader>
+                        <CardTitle className="font-outfit">Reset Password</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <Label>New Password</Label>
+                        <Input className="mt-2 mb-8" type="password" placeholder="new password" name="np" value={np} onChange={(e) => setNp(e.target.value)} />
+                        <Label>Repeat Password</Label>
+                        <Input className="mt-2" type="password" placeholder="new password" name="npr" value={npr} onChange={(e) => setNpr(e.target.value)} />
+                        <div className="flex flex-row mt-8" ><Button onClick={resetAction}>Reset</Button><Button className="ml-2" variant="secondary" onClick={(e) => {e.preventDefault(); navigate("/team/login")}}>Login</Button></div>
+                    </CardContent>
+                </Card>
             </div>
-        </>
+        </div>
     )
 }
 

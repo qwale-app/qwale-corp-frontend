@@ -2,7 +2,7 @@ import TeamCard from '@/components/TeamCard'
 
 const TeamList = ({cards, isBoard = false}) => {
     return(
-        <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 px-10 sm:px-0 lg:px-16 xl:px-48 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-8 gap-4 max-w-[60rem] w-full py-4 mx-auto">
             {
                 cards.map((member, i) => <TeamCard key={i} card={member} isBoard={isBoard} />)
             }
