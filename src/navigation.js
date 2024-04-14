@@ -1,3 +1,5 @@
+import kogitsioIcon from '@/assets/projects/kogitsio.png'
+
 const NAVIGATION_DATA = [
     {
         title: "qwale.app",
@@ -15,7 +17,7 @@ const NAVIGATION_DATA = [
         "Your AI search assistant.",
         group: "Projects",
         econ: "🔎",
-        img: "/src/assets/projects/kogitsio.png",
+        img: kogitsioIcon,
         hide: false
     },
     {
