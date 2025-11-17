@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react'
 
 const Homepage = () => {
     useEffect(() => {
-        document.title = "Qwale, Inc."
+        document.title = "Qwale Inc"
     }, [])
     const viewProj = useRef(null)
     return(

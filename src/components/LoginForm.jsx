@@ -41,7 +41,7 @@ const LoginFormList = () => {
     })
 
     useEffect(() => {
-        document.title = "Qwale Corporate | Login"
+        document.title = "Qwale | Login"
     }, [])
 
     const dispatch = useDispatch()

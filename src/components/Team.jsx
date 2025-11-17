@@ -14,7 +14,7 @@ import { useToast } from '@/components/ui/use-toast'
 
 const Team = () => {
     useEffect(() => {
-        document.title = "Qwale Corporate | Team"
+        document.title = "Qwale | Team"
     }, [])
 
     const dispatch = useDispatch()

@@ -43,7 +43,7 @@ const MemberPage = () => {
     const currentMember = useSelector(({ team }) => team.find(m => m.username == memberId))
 
     useEffect(() => {
-        if(currentMember) document.title = `Qwale Corporate | ${currentMember.name}`
+        if(currentMember) document.title = `Qwale | ${currentMember.name}`
     }, [currentMember])
 
     if(!currentMember) {

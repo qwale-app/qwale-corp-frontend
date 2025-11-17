@@ -4,7 +4,7 @@ const Error = () => {
     const [showError, setShowError] = useState(false)
 
     useEffect(() => {
-        document.title = "Qwale Corporate | Error"
+        document.title = "Qwale | Page Not Found"
     }, [])
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 const Contact = () => {
     useEffect(() => {
-        document.title = "Qwale Corporate | Contact"
+        document.title = "Qwale | Contact"
     }, [])
 
     return(

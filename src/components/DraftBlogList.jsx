@@ -17,7 +17,7 @@ const BlogList = () => {
     const { toast } = useToast()
 
     useEffect(() => {
-        if(loggedUser) document.title = "Qwale Corporate | Blog Drafts"
+        if(loggedUser) document.title = "Qwale | Blog Drafts"
     }, [loggedUser])
 
     const isEmployed = (user) => {
