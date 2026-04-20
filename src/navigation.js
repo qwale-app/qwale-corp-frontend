@@ -1,4 +1,5 @@
 import kogitsioIcon from '@/assets/projects/kogitsio.png'
+import qwalecodeIcon from '@/assets/projects/qwalecode.png'
 
 const NAVIGATION_DATA = [
     {
@@ -11,10 +12,20 @@ const NAVIGATION_DATA = [
         hide: true
     },
     {
+        title: "QwaleCode",
+        href: "https://github.com/faqro/qwale-code",
+        description:
+        "Lightweight collaborative AI code editor.",
+        group: "Projects",
+        econ: "💻",
+        img: qwalecodeIcon,
+        hide: false
+    },
+    {
         title: "Kogitsio",
         href: "https://kogits.io",
         description:
-        "Your AI search assistant.",
+        "Your AI research and thinking assistant.",
         group: "Projects",
         econ: "🔎",
         img: kogitsioIcon,
@@ -24,10 +35,10 @@ const NAVIGATION_DATA = [
         title: "QAuthify",
         href: "https://github.com/qwale-app/QAuthify",
         description:
-        "A lightweight and open-source JWT-based SSO Oauth2 platform for NodeJS.",
+        "A lightweight and open-source JWT-based SSO Oauth2 platform.",
         group: "Projects",
         econ: "⚡",
-        hide: true
+        hide: false
     },
     {
         title: "coming soon",
